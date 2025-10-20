@@ -1,3 +1,18 @@
-<p>categorias-listar works!</p>
+
 <a [routerLink]="['/categorias/crear']" href=""> Crear una nueva categoria </a>
-<h1>Aqui la tabla (html) para mostrar todos los registros</h1>
+<table class="administradores-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let categorias of categorias">
+      <th scope="row">{{ categorias.id }}</th>
+      <td>{{categorias.nombre}}</td>   
+      <td>{{categorias.descripcion}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,3 +1,31 @@
-<p>cliente-listar works!</p>
+
 <a [routerLink]="['/cliente/crear']" href=""> Crear un nuevo cliente </a>
-<h1>Aqui la tabla (html) para mostrar todos los registros</h1>
+
+<table class="administradores-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Correo</th>
+      <th scope="col">RFC</th>
+      <th scope="col">CSF</th>
+      <th scope="col">Estado</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of cliente">
+      <th scope="row">{{ cliente.id }}</th>
+      <td>{{cliente.nombre}}</td>   
+      <td>{{cliente.direccion}}</td>
+      <td>{{cliente.telefono}}</td>
+      <td>{{cliente.correo}}</td>
+      <td>{{cliente.rfc}}</td>
+      <td>{{cliente.csf}}</td>
+      <td>{{cliente.estado}}</td>
+    </tr>
+  </tbody>
+</table>
+

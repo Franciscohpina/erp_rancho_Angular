@@ -1,3 +1,36 @@
-<p>administradores-listar works!</p>
+
 <a [routerLink]="['/administradores/crear']" href=""> Crear un nuevo administrador </a>
-<h1>Aqui la tabla (html) para mostrar todos los registros</h1>
+
+
+  <table class="administradores-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">NSS</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">RFC</th>
+      <th scope="col">Ususario</th>
+      <th scope="col">Contraseña</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Rol</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let administradores of administradores">
+      <th scope="row">{{ administradores.id }}</th>
+      <td>{{administradores.nombres}}</td>   
+      <td>{{administradores.apellidos}}</td>
+      <td>{{administradores.nss}}</td>
+      <td>{{administradores.correo}}</td>
+      <td>{{administradores.telefono}}</td>
+      <td>{{administradores.rfc}}</td>
+      <td>{{administradores.usuario}}</td>
+      <td>{{administradores.contrasena}}</td>
+      <td>{{administradores.imagen}}</td>
+      <td>{{administradores.rol}}</td>
+    </tr>
+  </tbody>
+</table>

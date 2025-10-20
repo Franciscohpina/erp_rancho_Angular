@@ -1,3 +1,20 @@
-<p>corrales-listar works!</p>
+
 <a [routerLink]="['/corrales/crear']" href=""> Crear un nuevo corral </a>
-<h1>Aqui la tabla (html) para mostrar todos los registros</h1>
+
+<table class="administradores-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Capacidad</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let corrales of corrales">
+      <th scope="row">{{ corrales.id }}</th>
+      <td>{{corrales.capacidad}}</td>   
+      <td>{{corrales.estado}}</td>   
+    </tr>
+  </tbody>
+</table>
+

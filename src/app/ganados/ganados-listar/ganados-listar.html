@@ -1,3 +1,40 @@
-<p>ganados-listar works!</p>
+
 <a [routerLink]="['/ganados/crear']" href=""> Crear un nuevo corral </a>
-<h1>Aqui la tabla (html) para mostrar todos los registros</h1>
+
+<table class="administradores-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Origen</th>
+      <th scope="col">Altura</th>
+      <th scope="col">imagen</th>
+      <th scope="col">estado</th>
+      <th scope="col">Raza_id</th>
+      <th scope="col">Categoria_id</th>
+      <th scope="col">Corral_id</th>
+      <th scope="col">Proveedor_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ganados of ganados">
+      <th scope="row">{{ ganados.id }}</th>
+      <td>{{ganados.edad}}</td>   
+      <td>{{ganados.sexo}}</td>
+      <td>{{ganados.peso}}</td>
+      <td>{{ganados.precio}}</td>
+      <td>{{ganados.origen}}</td>
+      <td>{{ganados.altura}}</td>
+      <td>{{ganados.imagen}}</td>
+      <td>{{ganados.estado}}</td>
+      <td>{{ganados.raza_id}}</td>
+      <td>{{ganados.categoria_id}}</td>
+      <td>{{ganados.corral_id}}</td>
+      <td>{{ganados.proveedor_id}}</td>
+    </tr>
+  </tbody>
+</table>
+
