@@ -18,7 +18,7 @@
 
 
 
-.administradores-listar {
+.tanques-listar {
     width: 100%;
     border-collapse: collapse;
     background-color: white; 
@@ -27,7 +27,7 @@
     overflow: hidden; 
 }
 
-.administradores-listar thead th {
+.tanques-listar thead th {
     background-color: #8c916C; 
     color: white;
     padding: 12px 10px;
@@ -37,23 +37,23 @@
     font-size: 0.9em; 
 }
 
-.administradores-listar tbody tr {
+.tanques-listar tbody tr {
     background-color: white;
     transition: background-color 0.3s;
     border-bottom: 1px solid #EADED0; 
 }
 
-.administradores-listar tbody th, 
-.administradores-listar tbody td {
+.tanques-listar tbody th, 
+.tanques-listar tbody td {
     padding: 10px;
     color: #333;
     font-size: 0.85em; 
 }
 
-.administradores-listar tbody tr:nth-child(even) {
+.tanques-listar tbody tr:nth-child(even) {
     background-color: #f7f7f7; 
 }
 
-.administradores-listar tbody tr:hover {
+.tanques-listar tbody tr:hover {
     background-color: #EADED0; 
 }    

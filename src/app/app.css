@@ -19,7 +19,6 @@ body {
 
 
 
-/* Estilos para el Header (navbar) y Footer */
 .navbar, 
 .footer {
     background-color: #C7AF94 !important; 
@@ -27,7 +26,6 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
-/* Ajustes para la barra de navegación de Bootstrap */
 .navbar-brand,
 .nav-link {
     color: white !important;
@@ -40,14 +38,12 @@ body {
     border-radius: 5px;
 }
 
-/* Footer: Centrar texto y darle buen espacio */
 .footer {
     padding: 15px 0;
     text-align: center;
     margin-top: auto; 
 }
 
-/* Contenedor principal para el diseño de la página */
 .page-layout {
     display: grid;
     grid-template-columns: 220px 1fr; 
@@ -55,12 +51,10 @@ body {
     margin-top: 20px;
 }
 
-/* Columna del Menú Lateral (Sidebar) */
 .sidebar-menu {
     padding-top: 5px; 
 }
 
-/* ESTILO PARA EL MENÚ <ul> (NUEVO) */
 .sidebar-menu ul {
     list-style: none;
     padding: 0;

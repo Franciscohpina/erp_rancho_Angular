@@ -1,0 +1,28 @@
+
+<a [routerLink]="['/proveedores/crear']" href=""> Registrar nuevo proveedor </a>
+
+
+  <table class="proveedores-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let proveedores of proveedores">
+      <th scope="row">{{ proveedores.id }}</th>
+      <td>{{proveedores.nombre}}</td>   
+      <td>{{proveedores.direccion}}</td>
+      <td>{{proveedores.correo}}</td>
+      <td>{{proveedores.telefono}}</td>
+      <td>{{proveedores.categoria}}</td>
+      <td>{{proveedores.estado}}</td>
+    </tr>
+  </tbody>
+</table>
