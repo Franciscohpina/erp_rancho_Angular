@@ -1,0 +1,103 @@
+
+body {
+    background-color: #EADED0; 
+    font-family: 'Arial', sans-serif;
+    color: #333; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+.main-content {
+    flex-grow: 1; 
+    max-width: 100%; 
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+
+
+/* Estilos para el Header (navbar) y Footer */
+.navbar, 
+.footer {
+    background-color: #C7AF94 !important; 
+    color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+/* Ajustes para la barra de navegación de Bootstrap */
+.navbar-brand,
+.nav-link {
+    color: white !important;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #8c916C !important; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 5px;
+}
+
+/* Footer: Centrar texto y darle buen espacio */
+.footer {
+    padding: 15px 0;
+    text-align: center;
+    margin-top: auto; 
+}
+
+/* Contenedor principal para el diseño de la página */
+.page-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr; 
+    gap: 30px; 
+    margin-top: 20px;
+}
+
+/* Columna del Menú Lateral (Sidebar) */
+.sidebar-menu {
+    padding-top: 5px; 
+}
+
+/* ESTILO PARA EL MENÚ <ul> (NUEVO) */
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+    border: 1px solid #C7AF94;
+    border-radius: 8px;
+    background-color: white; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-menu ul li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333; 
+    border-bottom: 1px solid #f0f0f0; 
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.sidebar-menu ul li:last-child a {
+    border-bottom: none; 
+}
+
+.sidebar-menu ul li a:hover,
+.sidebar-menu ul li a.active { 
+    background-color: #EADED0; 
+    color: #8c916C; 
+    font-weight: bold;
+}
+
+.page-content {
+    padding: 0 10px;
+}
+
+.page-content .administrador-form {
+   
+    margin-left: 0; 
+    margin-right: 0; 
+}

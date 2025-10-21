@@ -1,0 +1,66 @@
+
+
+/* Estilo para el enlace 'Crear un nuevo administrador' */
+.page-content > a { 
+    display: inline-block;
+    background-color: #C7AF94; 
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 20px; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.page-content > a:hover {
+    background-color: #8c916C; 
+}
+
+/* ESTILOS PARA LA TABLA DE LISTADO (.administradores-listar) */
+
+
+.administradores-listar {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+/* Encabezados de la tabla (<thead>) */
+.administradores-listar thead th {
+    background-color: #8c916C; 
+    color: white;
+    padding: 12px 10px;
+    text-align: left;
+    border: none;
+    font-weight: bold;
+    font-size: 0.9em; 
+}
+
+/* Filas de datos (<tbody>) */
+.administradores-listar tbody tr {
+    background-color: white;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #EADED0; 
+}
+
+/* Fila de encabezado (el primer <th> dentro del <tbody>) y celdas */
+.administradores-listar tbody th, 
+.administradores-listar tbody td {
+    padding: 10px;
+    color: #333;
+    font-size: 0.85em; 
+}
+
+/* Alternacion de filas para mejorar la lectura  */
+.administradores-listar tbody tr:nth-child(even) {
+    background-color: #f7f7f7; 
+}
+
+/* Efecto al pasar el mouse (hover) */
+.administradores-listar tbody tr:hover {
+    background-color: #EADED0; 
+}    
