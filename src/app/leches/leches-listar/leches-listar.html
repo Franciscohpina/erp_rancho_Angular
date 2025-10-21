@@ -1,0 +1,27 @@
+
+<a [routerLink]="['/leches/crear']" href=""> Registrar nueva ordeña </a>
+
+
+  <table class="leches-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Densidad</th>
+      <th scope="col">Tanque_id</th>
+      <th scope="col">Ganado_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let leches of leches">
+      <th scope="row">{{ leches.id }}</th>
+      <td>{{leches.fecha}}</td>   
+      <td>{{leches.cantidad}}</td>
+      <td>{{leches.densidad}}</td>
+      <td>{{leches.tanque_id}}</td>
+      <td>{{leches.ganado_id}}</td>
+    </tr>
+  </tbody>
+</table>
+

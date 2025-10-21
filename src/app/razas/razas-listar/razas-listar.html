@@ -1,0 +1,25 @@
+
+<a [routerLink]="['/razas/crear']" href=""> Registrar una nueva raza </a>
+
+
+  <table class="razas-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Origen</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let razas of razas">
+      <th scope="row">{{ razas.id }}</th>
+      <td>{{razas.nombre}}</td>   
+      <td>{{razas.origen}}</td>
+      <td>{{razas.descripcion}}</td>
+      <td>{{razas.estado}}</td>
+    </tr>
+  </tbody>
+</table>
+

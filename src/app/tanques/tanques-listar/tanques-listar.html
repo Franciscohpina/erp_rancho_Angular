@@ -1,0 +1,25 @@
+
+<a [routerLink]="['/tanques/crear']" href=""> Registrar un nuevo tanque </a>
+
+
+  <table class="tanques-listar">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Capacidad</th>
+      <th scope="col">Temperatura</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Leche_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tanques of tanques">
+      <th scope="row">{{ tanques.id }}</th>
+      <td>{{tanques.capacidad}}</td>   
+      <td>{{tanques.temperatura}}</td>
+      <td>{{tanques.estado}}</td>
+      <td>{{tanques.leche_id}}</td>
+    </tr>
+  </tbody>
+</table>
+
