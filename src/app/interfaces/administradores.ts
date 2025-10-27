@@ -3,11 +3,11 @@ export interface Administradores {
     nombres:string;
     apellidos:string;
     nss:string;
-    correo:string;
+    email:string;
     telefono:string;
     rfc:string;
-    usuario:string;
-    contrasena: string;
+    username:string;
+    password: string;
     imagen: string;
     rol:string;
 

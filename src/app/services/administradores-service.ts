@@ -7,7 +7,7 @@ import { Administradores } from '../interfaces/administradores';
   providedIn: 'root'
 })
 export class AdministradoresService {
-  private apiURL ="http://localhost:3000/administradores"; //checar en postman/ ruta en express si tiene la palabra /api, si no se quita
+  private apiURL ='http://127.0.0.1:3000/administradores'; //checar en postman/ ruta en express si tiene la palabra /api, si no se quita
 
   constructor(private http: HttpClient){} //declarando funcion http con la que se trabajara 
 
