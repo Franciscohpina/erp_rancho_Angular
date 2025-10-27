@@ -22,9 +22,9 @@ export class LechesListar {
 
   cargarLeches(){
     this.lechesServicio.obtenerLeches().subscribe(
-      (registros: Leches[])=>{
+      (registros: any)=>{
         console.log("Registros devueltos desde SQL" + registros);
-        this.leches=registros;
+        this.leches=registros.data;
       });
   }
 

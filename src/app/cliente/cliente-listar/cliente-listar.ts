@@ -22,9 +22,9 @@ export class ClienteListar { // agredar "implements OnInit" si manda error
 
   cargarClientes(){
     this.clienteServicio.obtenerClientes().subscribe(
-      (registros: Cliente[])=>{
+      (registros: any)=>{
         console.log("Registros devueltos desde SQL" + registros);
-        this.clientes=registros;
+        this.clientes=registros.data;
       });
   }
 

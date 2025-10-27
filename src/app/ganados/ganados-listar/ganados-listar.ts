@@ -22,9 +22,9 @@ ganados: Ganados[] = [];
 
   cargarGanados(){
     this.ganadosServicio.obtenerGanados().subscribe(
-      (registros: Ganados[])=>{
+      (registros: any)=>{
         console.log("Registros devueltos desde SQL" + registros);
-        this.ganados=registros;
+        this.ganados=registros.data;
       });
   }
 

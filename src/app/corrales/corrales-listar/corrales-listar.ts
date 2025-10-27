@@ -22,9 +22,9 @@ export class CorralesListar {
 
   cargarCorrales(){
     this.corralesServicio.obtenerCorrales().subscribe(
-      (registros: Corrales[])=>{
+      (registros: any)=>{
         console.log("Registros devueltos desde SQL" + registros);
-        this.corrales=registros;
+        this.corrales=registros.data;
       });
   }
 

@@ -22,9 +22,9 @@ export class ProveedoresListar {
 
   cargarProveedores(){
     this.proveedoresServicio.obtenerProveedores().subscribe(
-      (registros: Proveedores[])=>{
+      (registros: any)=>{
         console.log("Registros devueltos desde SQL" + registros);
-        this.proveedores=registros;
+        this.proveedores=registros.data;
       });
 }
 

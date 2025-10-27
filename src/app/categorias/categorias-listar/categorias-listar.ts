@@ -23,9 +23,9 @@ export class CategoriasListar {
   
     cargarCategorias(){
       this.categoriasServicio.obtenerCategorias().subscribe(
-        (registros: Categorias[])=>{
+        (registros: any)=>{
           console.log("Registros devueltos desde SQL" + registros);
-          this.categorias=registros;
+          this.categorias=registros.data;
         });
     }
 // categorias = [

@@ -23,9 +23,9 @@ export class AdministradoresListar {
   
     cargarAdministradores(){
       this.administradoresServicio.obtenerAdministradores().subscribe(
-        (registros: Administradores[])=>{
+        (registros: any)=>{
           console.log("Registros devueltos desde SQL" + registros);
-          this.administradores=registros;
+          this.administradores=registros.data;
         });
     }
   

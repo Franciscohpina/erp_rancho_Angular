@@ -7,7 +7,7 @@ import { Cliente } from '../interfaces/cliente';
   providedIn: 'root'
 })
 export class ClienteService {
-  private apiURL ="http://localhost:3000/cliente"; //checar en postman/ ruta en express si tiene la palabra /api, si no se quita
+  private apiURL ="http://localhost:3000/clientes"; //checar en postman/ ruta en express si tiene la palabra /api, si no se quita
 
   constructor(private http: HttpClient){} //declarando funcion http con la que se trabajara 
 

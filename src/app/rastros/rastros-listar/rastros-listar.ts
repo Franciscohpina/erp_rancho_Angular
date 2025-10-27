@@ -22,9 +22,9 @@ rastros: Rastros[] = [];
 
   cargarRastros(){
     this.rastrosServicio.obtenerRastros().subscribe(
-      (registros: Rastros[])=>{
+      (registros: any)=>{
         console.log("Registros devueltos desde SQL" + registros);
-        this.rastros=registros;
+        this.rastros=registros.data;
       });
   }
 

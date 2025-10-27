@@ -22,9 +22,9 @@ razas: Razas[] = [];
 
   cargarRazas(){
     this.razasServicio.obtenerRazas().subscribe(
-      (registros: Razas[])=>{
+      (registros: any)=>{
         console.log("Registros devueltos desde SQL" + registros);
-        this.razas=registros;
+        this.razas=registros.data;
       });
   }
 

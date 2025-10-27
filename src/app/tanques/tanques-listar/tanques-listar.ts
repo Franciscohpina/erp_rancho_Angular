@@ -22,9 +22,9 @@ tanques: Tanques[] = [];
 
   cargarTanques(){
     this.tanquesServicio.obtenerTanques().subscribe(
-      (registros: Tanques[])=>{
+      (registros: any)=>{
         console.log("Registros devueltos desde SQL" + registros);
-        this.tanques=registros;
+        this.tanques=registros.data;
       });
   }
 
