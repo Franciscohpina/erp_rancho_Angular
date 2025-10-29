@@ -1,17 +1,18 @@
 <h1>Crea una nueva categoria</h1>
 
-
-<div class="categorias-form">
-    <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="id">
-    <label for="id">ID</label>
+<form (ngSubmit)="crearCategorias()">
+    <div class="categorias-form">
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="categorias.nombre" name="nombre" type="text" class="form-control" id="nombre">
+        <label for="nombre">Nombre</label>
+        </div>
+        <div class="form-floating">
+        <input [(ngModel)]="categorias.descripcion" name="descripcion" type="text" class="form-control" id="descripcion">
+        <label for="descripcion">descripción</label>
+        </div>
+        <div>
+           <button type="submit">Guardar Categoria</button>
+           <button type="reset">Limpiar Registro</button>        
+       </div>
     </div>
-    <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="nombre">
-    <label for="nombre">Nombre</label>
-    </div>
-    <div class="form-floating">
-    <input type="text" class="form-control" id="descripcion">
-    <label for="descripcion">descripción</label>
-    </div>
-</div>
+</form>

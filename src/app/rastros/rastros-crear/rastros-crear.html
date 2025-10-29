@@ -1,27 +1,27 @@
 <h1>Registra un nuevo rastro</h1>
 
-<div class="main-content">
+<form (ngSubmit)="crearRastros()">
     <div class="rastros-form">
         <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="id">
-        <label for="id">ID</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input type="date" class="form-control" id="fecha">
+        <input [(ngModel)]="rastros.fecha" name="fecha" type="date" class="form-control" id="fecha">
         <label for="fecha">Fecha</label>
         </div>
         <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="destino">
+        <input [(ngModel)]="rastros.destino" name="destino" type="text" class="form-control" id="destino">
         <label for="destino">Destino</label>
         </div>
         <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="estado" >
+        <input [(ngModel)]="rastros.estado" name="estado" type="text" class="form-control" id="estado" >
         <label for="estado">Estado</label>
         </div>
         <div class="form-floating">
-        <input type="text" class="form-control" id="ganado_id">
+        <input [(ngModel)]="rastros.ganado_id" name="ganado_id" type="text" class="form-control" id="ganado_id">
         <label for="ganado_id">ganado_id</label>
         </div>
+        <div>
+           <button type="submit">Guardar Rastro</button>
+           <button type="reset">Limpiar Registro</button>        
+       </div>
     </div>
-</div>
+</form>
 

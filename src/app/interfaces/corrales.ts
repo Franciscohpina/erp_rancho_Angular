@@ -1,5 +1,5 @@
 export interface Corrales {
     id:number;
-    capacidad:string;
+    capacidad:number;
     estado:string;
 }

@@ -1,6 +1,6 @@
 export interface Rastros {
     id:number;
-    fecha: Date;
+    fecha: String;
     destino: string;
     estado:string;
     ganado_id: number;

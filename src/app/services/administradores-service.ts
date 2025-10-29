@@ -16,9 +16,9 @@ export class AdministradoresService {
     return this.http.get<Administradores[]>(this.apiURL); //si el cliente no coincide con la interfaz de la BD aqui va a tronar
   }
 
-  guardarCliente(cliente: Administradores): Observable<Administradores> //cambiar <Cliente> por <any> si no sabemos que es lo que manda
+  guardarAdministradores(administradores: Administradores): Observable<Administradores> //cambiar <Cliente> por <any> si no sabemos que es lo que manda
   {
-    return this.http.post<Administradores>(this.apiURL, cliente).pipe( //cambiar <Cliente> por <any> si no sabemos que es lo que manda
+    return this.http.post<Administradores>(this.apiURL, administradores).pipe( //cambiar <Cliente> por <any> si no sabemos que es lo que manda
       tap(res=>{
         console.log('respuesta'+res);
       })

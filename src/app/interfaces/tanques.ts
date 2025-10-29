@@ -3,5 +3,5 @@ export interface Tanques {
     capacidad: string;
     temperatura:string; 
     estado:string; 
-    leche_id:string;
+    leche_id:number;
 }

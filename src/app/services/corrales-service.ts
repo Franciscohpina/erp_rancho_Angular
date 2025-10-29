@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Corrales } from '../interfaces/corrales';
 
 @Injectable({
@@ -14,4 +14,13 @@ export class CorralesService {
     {
       return this.http.get<Corrales[]>(this.apiURL);
     }
+
+    guardarCorrales(corrales: Corrales): Observable<Corrales> //cambiar <Cliente> por <any> si no sabemos que es lo que manda
+      {
+        return this.http.post<Corrales>(this.apiURL, corrales).pipe( //cambiar <Cliente> por <any> si no sabemos que es lo que manda
+          tap(res=>{
+            console.log('respuesta'+res);
+          })
+        );
+      }
 }

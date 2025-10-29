@@ -13,13 +13,12 @@ import { Router } from '@angular/router';
 export class ClienteCrear {
   
   cliente: Cliente = {
-    id:1,
+    id:0,
     nombre:'',
     direccion:'',
     telefono:'',
     correo:'',
     rfc:'',
-    csf:'',
     estado:'',
   }
 

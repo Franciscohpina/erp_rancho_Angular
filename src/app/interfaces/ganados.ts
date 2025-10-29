@@ -1,11 +1,11 @@
 export interface Ganados {
     id:number; 
-    edad:string; 
+    edad:number; 
     sexo:string; 
-    peso:string;
-    precio:string;
+    peso:number;
+    precio:number;
     origen:string; 
-    altura:string;
+    altura:number;
     imagen:string;
     estado: string;
     raza_id: number; 

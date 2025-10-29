@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Tanques } from '../interfaces/tanques';
 
 @Injectable({
@@ -14,4 +14,13 @@ export class TanquesService {
     {
       return this.http.get<Tanques[]>(this.apiURL);
     }
+
+    guardarTanques(tanques: Tanques): Observable<Tanques> //cambiar <Cliente> por <any> si no sabemos que es lo que manda
+      {
+        return this.http.post<Tanques>(this.apiURL, tanques).pipe( //cambiar <Cliente> por <any> si no sabemos que es lo que manda
+          tap(res=>{
+            console.log('respuesta'+res);
+          })
+        );
+      }
 }

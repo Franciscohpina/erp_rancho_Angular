@@ -1,8 +1,8 @@
 export interface Leches {
     id:number;
-    fecha:Date; 
-    cantidad:string;
-    densidad:string;
+    fecha:String; 
+    cantidad:number;
+    densidad:number;
     tanque_id:number;
     ganado_id:number;
 }

@@ -4,8 +4,7 @@ export interface Cliente {
     direccion:string;
     telefono:string;
     correo:string;
-    rfc:string; 
-    csf:string;
+    rfc:string;
     estado:string;
 }
  

@@ -1,28 +1,28 @@
 <h1>Registra un nuevo proveedor</h1>
 
-<div class="main-content">
+<form (ngSubmit)="crearRazas()">
     <div class="razas-form">
         <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="id">
-        <label for="id">ID</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="nombre">
+        <input [(ngModel)]="razas.nombre" name="nombre" type="text" class="form-control" id="nombre">
         <label for="nombre">Nombre</label>
         </div>
         <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="origen">
+        <input [(ngModel)]="razas.origen" name="origen" type="text" class="form-control" id="origen">
         <label for="origen">Origen</label>
         </div>
         <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="descripcion" >
+        <input [(ngModel)]="razas.descripcion" name="descripcion" type="text" class="form-control" id="descripcion" >
         <label for="descripcion">Descripcion</label>
         </div>
-        <select class="form-select" aria-label="select-estado">
+        <select [(ngModel)]="razas.estado" name="estado" class="form-select" aria-label="select-estado">
         <option selected>Selecciona el estado </option>
         <option value="activo">Activo</option>
         <option value="inactivo">Inactivo</option>
         </select>
+        <div>
+           <button type="submit">Guardar Raza</button>
+           <button type="reset">Limpiar Registro</button>        
+       </div>
     </div>
-</div>
+</form>
 

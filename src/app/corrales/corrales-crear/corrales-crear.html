@@ -1,17 +1,21 @@
 <h1>Crea un nuevo corral</h1>
 
-<div class="corrales-form">
-    <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="id">
-    <label for="id">ID</label>
+<form (ngSubmit)="crearCorrales()">
+    <div class="corrales-form">
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="corrales.capacidad" name="capacidad" type="number" class="form-control" id="capacidad">
+        <label for="capacidad">Capacidad</label>
+        </div>
+        <select [(ngModel)]="corrales.estado" name="estado" class="form-select" aria-label="select-estado">
+        <option selected>Selecciona un estado </option>
+        <option value="disponible">Disponible</option>
+        <option value="ocupado">Ocupado</option>
+        <option value="limpieza">Limpieza</option>
+        <option value="reparacion">Reparacion</option>
+        </select>
+        <div>
+           <button type="submit">Guardar Corral</button>
+           <button type="reset">Limpiar Registro</button>        
+       </div>
     </div>
-    <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="capacidad">
-    <label for="capacidad">Capacidad</label>
-    </div>
-    <select class="form-select" aria-label="select-estado">
-    <option selected>Selecciona un estado </option>
-    <option value="activo">Activo</option>
-    <option value="inactivo">Inactivo</option>
-    </select>
-</div>
+</form>
