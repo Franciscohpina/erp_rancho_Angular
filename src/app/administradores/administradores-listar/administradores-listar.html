@@ -1,8 +1,11 @@
+<h1>Administradores</h1>
 
-<a class="btn-crear-admin" [routerLink]="['/administradores/crear']" href=""> Crear un nuevo administrador </a>
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/administradores/crear']" href=""> Agregar administrador </a>
+</div>
 
-
-  <table class="administradores-listar">
+<br>
+  <table class="administradores-listar table-striped">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -16,6 +19,7 @@
       <th scope="col">Contraseña</th>
       <th scope="col">Imagen</th>
       <th scope="col">Rol</th>
+      <th width="250px">Acciones</th>
     </tr>
   </thead>
  <tbody>
@@ -31,6 +35,11 @@
       <td>{{administradores.password}}</td>
       <td>{{administradores.imagen}}</td>
       <td>{{administradores.rol}}</td>
+      <td>
+        <a [routerLink]="['/administradores', administradores.id ]"class="btn btn-warning btn-sm m-1">Mostrar</a>
+        <a [routerLink]="['/administradores', administradores.id, 'editar' ]" class="btn btn-primary btn-sm m-1">Editar</a>
+        <button (click)= "eliminarAdministradores(administradores.id!)" btn btn-danger btn-sm>Eliminar</button>
+      </td>
     </tr>
   </tbody>
 </table>

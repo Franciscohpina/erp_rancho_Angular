@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Ganados } from '../../interfaces/ganados';
 import { GanadosService } from '../../services/ganados-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-ganados-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './ganados-crear.html',
   styleUrl: './ganados-crear.css'
 })

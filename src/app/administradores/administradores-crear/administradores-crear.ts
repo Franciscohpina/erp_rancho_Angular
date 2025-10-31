@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Administradores } from '../../interfaces/administradores';
 import { AdministradoresService } from '../../services/administradores-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-administradores-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './administradores-crear.html',
   styleUrl: './administradores-crear.css'
 })
@@ -42,5 +42,4 @@ export class AdministradoresCrear {
       });
       this.route.navigate(['/administradores']);
     }
-
 }

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Categorias } from '../../interfaces/categorias';
 import { CategoriasService } from '../../services/categorias-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-categorias-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './categorias-crear.html',
   styleUrl: './categorias-crear.css'
 })

@@ -1,12 +1,17 @@
+<h1>Corrales</h1>
 
-<a [routerLink]="['/corrales/crear']" href=""> Crear un nuevo corral </a>
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/corrales/crear']" href=""> Agregar corral </a>
+</div>
 
-<table class="administradores-listar">
+<br>
+<table class="administradores-listar table-striped">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Capacidad</th>
       <th scope="col">Estado</th>
+      <th width="250px">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +19,11 @@
       <th scope="row">{{ corrales.id }}</th>
       <td>{{corrales.capacidad}}</td>   
       <td>{{corrales.estado}}</td>   
+      <td>
+        <button class="btn btn-warning btn-sm m-1">Detalles</button>
+        <a [routerLink]="['/corrales',corrales.id,'editar']"class="btn btn-primary btn-sm m-1">Editar</a>
+        <button class="btn btn-danger btn-sm">Eliminar</button>
+      </td>
     </tr>
   </tbody>
 </table>

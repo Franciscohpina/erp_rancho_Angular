@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Corrales } from '../../interfaces/corrales';
 import { CorralesService } from '../../services/corrales-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-corrales-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './corrales-crear.html',
   styleUrl: './corrales-crear.css'
 })

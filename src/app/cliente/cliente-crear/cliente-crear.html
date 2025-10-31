@@ -1,7 +1,11 @@
 <h1>Crea un nuevo cliente</h1>
 
-<form (ngSubmit)="crearCliente()">
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/cliente']"  href=""> regresar </a>
+</div>
 
+<form (ngSubmit)="crearCliente()">
+<br>
     <div class="cliente-form">
         <div class="form-floating mb-3">
         <input [(ngModel)]="cliente.nombre" name="nombre" type="text" class="form-control" id="nombre">

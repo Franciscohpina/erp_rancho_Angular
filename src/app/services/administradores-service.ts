@@ -24,5 +24,18 @@ export class AdministradoresService {
       })
     );
   }
-}
 
+    buscarAdministradores(id: number): Observable<Administradores> {
+    return this.http.get<Administradores>(`${this.apiURL}/${id}`); 
+  }
+
+  actualizarAdministradores(id: number, data: Administradores): Observable<Administradores> {
+    return this.http.put<Administradores>(`${this.apiURL}/${id}`, data).pipe(
+      tap(res => console.log('Respuesta al actualizar:', res))
+    );
+  }
+
+     eliminarAdministradores(id: number): Observable<any> {
+     return this.http.delete<any>(`${this.apiURL}/${id}`);
+   }
+}

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Cliente } from '../../interfaces/cliente';
 import { ClienteService } from '../../services/cliente-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cliente-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './cliente-crear.html',
   styleUrl: './cliente-crear.css'
 })

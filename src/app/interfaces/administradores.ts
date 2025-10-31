@@ -1,5 +1,5 @@
 export interface Administradores {
-    id:number; 
+    id?:number; 
     nombres:string;
     apellidos:string;
     nss:string;

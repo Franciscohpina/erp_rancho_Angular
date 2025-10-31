@@ -1,52 +1,56 @@
 <h1>Crea un nuevo administrador</h1>
 
-<form (ngSubmit)="crearAdministradores()">
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/administradores']"  href=""> regresar </a>
+</div>
 
-    <div class="administrador-form">
-       <div class="form-floating">
-       <input [(ngModel)]="administradores.nombres" name="nombres" type="text" class="form-control" id="nombre">
-       <label for="nombre">Nombres</label>
-       </div>
-       <div class="form-floating">
-       <input [(ngModel)]="administradores.apellidos" name="apellidos" type="text" class="form-control" id="apellidos">
-       <label for="apellidos">Apellidos</label>
-       </div>
-       <div class="form-floating">
-       <input [(ngModel)]="administradores.nss" name="nss" type="text" class="form-control" id="nss">
-       <label for="nss">Numero de seguro social</label>
-       </div>
-       <div class="form-floating">
-       <input [(ngModel)]="administradores.email" name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-       <label for="floatingInput">Correo</label>
-       </div>
-       <div class="form-floating">
-       <input [(ngModel)]="administradores.telefono" name="telefono" type="text" class="form-control" id="telefono">
-       <label for="telefono">Telefono</label>
-       </div>
-       <div class="form-floating mb-3">
-       <input [(ngModel)]="administradores.rfc" name="rfc" type="text" class="form-control" id="rfc">
-       <label for="rfc">RFC</label>
-       </div>
-       <div class="form-floating">
-       <input [(ngModel)]="administradores.username" name="username" type="text" class="form-control" id="csf" placeholder="usuario">
-       <label for="usuario">Usuario</label>
-       </div>
-       <div class="form-floating">
-       <input [(ngModel)]="administradores.password" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-       <label for="floatingPassword">Contreseña</label>
-       </div>
-       <div class="input-group mb-3">
-       <input [(ngModel)]="administradores.imagen" name="imagen" type="file" class="form-control" id="inputGroupFile02">
-       <label class="input-group-text" for="inputGroupFile02">Imagen</label>
-       </div>
-       <select [(ngModel)]="administradores.rol" name="rol" class="form-select" aria-label="select-estado">
-       <option selected>Selecciona un rol </option>
-       <option value="admin">Administrador</option>
-       <option value="superadmin">Superadministrador</option>
-       </select>
-       <div>
-           <button type="submit">Guardar Administrador</button>
-           <button type="reset">Limpiar Administrador</button>        
+<form (ngSubmit)="crearAdministradores()">
+<br>
+ <div class="administrador-form">
+<div class="form-floating">
+<input [(ngModel)]="administradores.nombres" name="nombres" type="text" class="form-control" id="nombre">
+<label for="nombre">Nombres</label>
+ </div>
+ <div class="form-floating">
+<input [(ngModel)]="administradores.apellidos" name="apellidos" type="text" class="form-control" id="apellidos">
+  <label for="apellidos">Apellidos</label>
+  </div>
+<div class="form-floating">
+<input [(ngModel)]="administradores.nss" name="nss" type="text" class="form-control" id="nss">
+  <label for="nss">Numero de seguro social</label>
+  </div>
+  <div class="form-floating">
+<input [(ngModel)]="administradores.email" name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput">Correo</label>
+</div>
+  <div class="form-floating">
+<input [(ngModel)]="administradores.telefono" name="telefono" type="text" class="form-control" id="telefono">
+  <label for="telefono">Telefono</label>
+  </div>
+  <div class="form-floating mb-3">
+<input [(ngModel)]="administradores.rfc" name="rfc" type="text" class="form-control" id="rfc">
+  <label for="rfc">RFC</label>
+ </div>
+  <div class="form-floating">
+<input [(ngModel)]="administradores.username" name="username" type="text" class="form-control" id="csf" placeholder="usuario">
+  <label for="usuario">Usuario</label>
+  </div>
+  <div class="form-floating">
+<input [(ngModel)]="administradores.password" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+ <label for="floatingPassword">Contreseña</label>
+ </div>
+ <div class="input-group mb-3">
+<input [(ngModel)]="administradores.imagen" name="imagen" type="file" class="form-control" id="inputGroupFile02">
+ <label class="input-group-text" for="inputGroupFile02">Imagen</label>
+ </div>
+<select [(ngModel)]="administradores.rol" name="rol" class="form-select" aria-label="select-estado">
+ <option selected>Selecciona un rol </option>
+ <option value="admin">Administrador</option>
+ <option value="superadmin">Superadministrador</option>
+ </select>
+ <div>
+<button type="submit">Guardar Administrador</button>
+<button type="reset">Limpiar Administrador</button> 
        </div>
-    </div>    
+ </div>
 </form>
