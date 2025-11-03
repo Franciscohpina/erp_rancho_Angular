@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Leches } from '../../interfaces/leches';
 import { LechesService } from '../../services/leches-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-leches-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './leches-crear.html',
   styleUrl: './leches-crear.css'
 })

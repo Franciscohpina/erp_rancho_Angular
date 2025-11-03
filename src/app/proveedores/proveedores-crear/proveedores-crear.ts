@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Proveedores } from '../../interfaces/proveedores';
 import { ProveedoresService } from '../../services/proveedores-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-proveedores-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './proveedores-crear.html',
   styleUrl: './proveedores-crear.css'
 })

@@ -1,5 +1,10 @@
-<h1>Registra un nuevo tanque</h1>
+<h1>Registra un tanque</h1>
 
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/tanques']" href=""> Regresar </a>
+</div>
+
+<br>
 <form (ngSubmit)="crearTanques()">
     <div class="tanques-form">
         <div class="form-floating mb-3">

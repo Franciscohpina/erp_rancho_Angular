@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Tanques } from '../../interfaces/tanques';
 import { TanquesService } from '../../services/tanques-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tanques-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './tanques-crear.html',
   styleUrl: './tanques-crear.css'
 })

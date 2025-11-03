@@ -31,6 +31,8 @@ import { LechesMostrar } from './leches/leches-mostrar/leches-mostrar';
 
 import { ProveedoresListar } from './proveedores/proveedores-listar/proveedores-listar';
 import { ProveedoresCrear } from './proveedores/proveedores-crear/proveedores-crear';
+import { ProveedoresEditar } from './proveedores/proveedores-editar/proveedores-editar';
+import { ProveedoresMostrar } from './proveedores/proveedores-mostrar/proveedores-mostrar';
 
 import { RastrosListar } from './rastros/rastros-listar/rastros-listar';
 import { RastrosCrear } from './rastros/rastros-crear/rastros-crear';
@@ -39,9 +41,13 @@ import { RastrosMostrar } from './rastros/rastros-mostrar/rastros-mostrar';
 
 import { RazasListar } from './razas/razas-listar/razas-listar';
 import { RazasCrear } from './razas/razas-crear/razas-crear';
+import { RazasEditar } from './razas/razas-editar/razas-editar';
+import { RazasMostrar } from './razas/razas-mostrar/razas-mostrar';
 
 import { TanquesListar } from './tanques/tanques-listar/tanques-listar';
 import { TanquesCrear } from './tanques/tanques-crear/tanques-crear';
+import { TanquesEditar } from './tanques/tanques-editar/tanques-editar';
+import { TanquesMostrar } from './tanques/tanques-mostrar/tanques-mostrar';
 
 
 export const routes: Routes = [
@@ -78,6 +84,8 @@ export const routes: Routes = [
 
     {path:'proveedores', component: ProveedoresListar},
     {path:'proveedores/crear', component: ProveedoresCrear},
+    {path:'proveedores/:id/editar', component: ProveedoresEditar},
+    {path:'proveedores/:id', component: ProveedoresMostrar},
 
     {path:'rastros', component: RastrosListar},
     {path:'rastros/crear', component: RastrosCrear},
@@ -86,7 +94,11 @@ export const routes: Routes = [
 
     {path:'razas', component: RazasListar},
     {path:'razas/crear', component: RazasCrear},
+    {path:'razas/:id/editar', component: RazasEditar},
+    {path:'razas/:id', component: RazasMostrar},
 
     {path:'tanques', component: TanquesListar},
     {path:'tanques/crear', component: TanquesCrear},
+    {path:'tanques/:id/editar', component: TanquesEditar},
+    {path:'tanques/:id', component: TanquesMostrar},
 ];

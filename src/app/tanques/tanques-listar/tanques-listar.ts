@@ -28,6 +28,15 @@ tanques: Tanques[] = [];
       });
   }
 
+    eliminarTanque(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este registro de tanque?')) {
+      this.tanquesServicio.eliminarTanque(id).subscribe(() => {
+        console.log('Registro eliminado');
+        // Actualiza la lista en el frontend
+        this.tanques = this.tanques.filter(l => l.id !== id);
+      });
+    }
+  }
 
   // tanques = [
   //   {id:1, capacidad:'5000L', temperatura:'5ºC', estado:'Lleno', leche_id:'1'}

@@ -1,0 +1,19 @@
+<h1>Detalles de tanque</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/tanques']">Regresar</a>
+</div>
+<br>
+<!-- Usamos *ngIf para esperar a que lleguen los datos -->
+<div *ngIf="tanque">
+  <p><strong>ID:</strong> {{ tanque.id }}</p>
+  <p><strong>Capacidad:</strong> {{ tanque.capacidad }}</p>
+  <p><strong>Temperatura :</strong> {{ tanque.temperatura }}</p>
+  <p><strong>Estado:</strong> {{ tanque.estado }}</p>
+  <p><strong>ID leche:</strong> {{ tanque.leche_id }}</p>
+</div>
+
+<!-- Mensaje de carga -->
+<div *ngIf="!tanque">
+  <p>Cargando datos...</p>
+</div>

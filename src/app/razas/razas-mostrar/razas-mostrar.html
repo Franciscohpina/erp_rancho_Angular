@@ -1,0 +1,19 @@
+<h1>Detalles de Ordeña</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/razas']">Regresar</a>
+</div>
+
+<!-- Usamos *ngIf para esperar a que lleguen los datos -->
+<div *ngIf="raza">
+  <p><strong>ID:</strong> {{ raza.id }}</p>
+  <p><strong>Nombre:</strong> {{ raza.nombre }}</p>
+  <p><strong>Descripcion:</strong> {{ raza.descripcion }}</p>
+  <p><strong>origen:</strong> {{ raza.origen }}</p>
+  <p><strong>Estado:</strong> {{ raza.estado }}</p>
+</div>
+
+<!-- Mensaje de carga -->
+<div *ngIf="!raza">
+  <p>Cargando datos...</p>
+</div>

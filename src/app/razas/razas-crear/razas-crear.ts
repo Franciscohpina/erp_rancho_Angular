@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Razas } from '../../interfaces/razas';
 import { RazasService } from '../../services/razas-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-razas-crear',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './razas-crear.html',
   styleUrl: './razas-crear.css'
 })

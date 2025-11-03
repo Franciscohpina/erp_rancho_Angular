@@ -1,7 +1,8 @@
 
-<a [routerLink]="['/tanques/crear']" href=""> Registrar un nuevo tanque </a>
+<a class="btn btn-success btn-sm" [routerLink]="['/tanques/crear']" href=""> Registrar un nuevo tanque </a>
 
-
+<br>
+<br>
   <table class="tanques-listar">
   <thead>
     <tr>
@@ -10,6 +11,7 @@
       <th scope="col">Temperatura</th>
       <th scope="col">Estado</th>
       <th scope="col">Leche_id</th>
+      <th width="250px">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +21,13 @@
       <td>{{tanques.temperatura}}</td>
       <td>{{tanques.estado}}</td>
       <td>{{tanques.leche_id}}</td>
+       <td class="text-nowrap">
+        <div class="btn-group" role="group">
+          <a [routerLink]="['/tanques', tanques.id]" class="btn btn-warning btn-sm">Detalles</a>
+          <a [routerLink]="['/tanques', tanques.id, 'editar']" class="btn btn-primary btn-sm">Editar</a>
+          <button (click)="eliminarTanque(tanques.id)" class="btn btn-danger btn-sm">Eliminar</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

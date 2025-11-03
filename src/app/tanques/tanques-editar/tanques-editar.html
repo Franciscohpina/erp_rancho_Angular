@@ -1,0 +1,32 @@
+<h1>Registra un tanque</h1>
+
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/tanques']" href=""> Regresar </a>
+</div>
+
+<br>
+<form (ngSubmit)="actualizarTanque()">
+    <div class="tanques-form">
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="tanque.capacidad" name="capacidad" type="text" class="form-control" id="capacidad">
+        <label for="capacidad">Capacidad</label>
+        </div>
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="tanque.temperatura" name="temperatura" type="text" class="form-control" id="temperatura">
+        <label for="temperatura">Temperatura</label>
+        </div>
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="tanque.leche_id" name="leche_id" type="text" class="form-control" id="leche_id">
+        <label for="leche_id">Leche_id</label>
+        </div>
+        <select [(ngModel)]="tanque.estado" name="estado" class="form-select" aria-label="select-estado">
+        <option selected>Selecciona el estado </option>
+        <option value="vacio">Vacio</option>
+        <option value="lleno">Lleno</option>
+        </select>
+         <div>
+      <button type="submit">Actualizar Registro</button>
+    </div>
+  </div>    
+</form>
+

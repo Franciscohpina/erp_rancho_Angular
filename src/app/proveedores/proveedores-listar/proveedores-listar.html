@@ -1,7 +1,9 @@
+<h1>Proveedores</h1>
 
-<a [routerLink]="['/proveedores/crear']" href=""> Registrar nuevo proveedor </a>
 
-
+<a class="btn btn-success btn-sm" [routerLink]="['/proveedores/crear']" > Registrar nuevo proveedor </a>
+  <br>
+  <br>
   <table class="proveedores-listar">
   <thead>
     <tr>
@@ -12,6 +14,8 @@
       <th scope="col">Telefono</th>
       <th scope="col">Categoria</th>
       <th scope="col">Estado</th>
+      <th width="250px">Acciones</th>
+
     </tr>
   </thead>
   <tbody>
@@ -23,6 +27,13 @@
       <td>{{proveedores.telefono}}</td>
       <td>{{proveedores.categoria}}</td>
       <td>{{proveedores.estado}}</td>
+      <td class="text-nowrap">
+        <div class="btn-group" role="group">
+          <a [routerLink]="['/proveedores', proveedores.id]" class="btn btn-warning btn-sm">Detalles</a>
+          <a [routerLink]="['/proveedores', proveedores.id, 'editar']" class="btn btn-primary btn-sm">Editar</a>
+          <button (click)="eliminarProveedor(proveedores.id)" class="btn btn-danger btn-sm">Eliminar</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

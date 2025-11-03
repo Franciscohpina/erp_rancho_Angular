@@ -1,0 +1,21 @@
+<h1>Detalles de proveedor</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/proveedores']">Regresar</a>
+</div>
+
+<!-- Usamos *ngIf para esperar a que lleguen los datos -->
+<div *ngIf="proveedor">
+  <p><strong>ID:</strong> {{ proveedor.id }}</p>
+  <p><strong>Nombre:</strong> {{ proveedor.nombre }}</p>
+  <p><strong>Direccion:</strong> {{ proveedor.direccion }}</p>
+  <p><strong>correo:</strong> {{ proveedor.correo }}</p>
+  <p><strong>Telefono:</strong> {{ proveedor.telefono }}</p>
+  <p><strong>Categoria:</strong> {{ proveedor.categoria }}</p>
+  <p><strong>Estado:</strong> {{ proveedor.estado }}</p>
+</div>
+
+<!-- Mensaje de carga -->
+<div *ngIf="!proveedor">
+  <p>Cargando datos...</p>
+</div>

@@ -15,12 +15,32 @@ export class TanquesService {
       return this.http.get<Tanques[]>(this.apiURL);
     }
 
-    guardarTanques(tanques: Tanques): Observable<Tanques> //cambiar <Cliente> por <any> si no sabemos que es lo que manda
-      {
-        return this.http.post<Tanques>(this.apiURL, tanques).pipe( //cambiar <Cliente> por <any> si no sabemos que es lo que manda
-          tap(res=>{
-            console.log('respuesta'+res);
-          })
-        );
-      }
-}
+    // --- Método existente (Corregido a <any>) ---
+        guardarTanques(tanques: Tanques): Observable<any>
+        {
+          return this.http.post<any>(this.apiURL, tanques).pipe( 
+            tap(res=>{
+              console.log('respuesta'+res);
+            })
+          );
+        }
+    
+      // ---- MÉTODO AÑADIDO: BUSCAR POR ID ----
+      buscarTanque(id: number): Observable<any> {
+        return this.http.get<any>(`${this.apiURL}/${id}`); 
+      }
+    
+      // ---- MÉTODO AÑADIDO: ACTUALIZAR ----
+      actualizarTanque(id: number, data: Tanques): Observable<any> {
+        // Como no hay archivos, podemos enviar JSON (el objeto 'data')
+        return this.http.put<any>(`${this.apiURL}/${id}`, data).pipe(
+          tap(res => console.log('Respuesta al actualizar:', res))
+        );
+      }
+    
+      // ---- MÉTODO AÑADIDO: ELIMINAR ----
+      eliminarTanque(id: number): Observable<any> {
+        return this.http.delete<any>(`${this.apiURL}/${id}`);
+      }
+    }
+    

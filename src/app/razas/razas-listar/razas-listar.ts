@@ -28,6 +28,18 @@ razas: Razas[] = [];
       });
   }
 
+  eliminarRaza(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este registro de raza?')) {
+      this.razasServicio.eliminarRaza(id).subscribe(() => {
+        console.log('Registro eliminado');
+        // Actualiza la lista en el frontend
+        this.razas = this.razas.filter(l => l.id !== id);
+      });
+    }
+  }
+
+
+
 
   // razas = [
   //   {id:1, nombre:'Wagyu', origen:'Australia', descripcion:'Raza productora de carne de alta calidad' ,estado:'activo'}

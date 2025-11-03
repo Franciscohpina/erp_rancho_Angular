@@ -1,7 +1,10 @@
+<h1>Razas</h1>
 
-<a [routerLink]="['/razas/crear']" href=""> Registrar una nueva raza </a>
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/razas/crear']"> Registrar nueva </a>
+</div>
 
-
+<br>
   <table class="razas-listar">
   <thead>
     <tr>
@@ -10,6 +13,7 @@
       <th scope="col">Origen</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Estado</th>
+      <th width="250px">Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +23,13 @@
       <td>{{razas.origen}}</td>
       <td>{{razas.descripcion}}</td>
       <td>{{razas.estado}}</td>
+      <td class="text-nowrap">
+        <div class="btn-group" role="group">
+          <a [routerLink]="['/razas', razas.id]" class="btn btn-warning btn-sm">Detalles</a>
+          <a [routerLink]="['/razas', razas.id, 'editar']" class="btn btn-primary btn-sm">Editar</a>
+          <button (click)="eliminarRaza(razas.id)" class="btn btn-danger btn-sm">Eliminar</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
