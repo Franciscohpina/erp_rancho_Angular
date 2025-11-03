@@ -35,10 +35,10 @@
       <td>{{administradores.password}}</td>
       <td>{{administradores.imagen}}</td>
       <td>{{administradores.rol}}</td>
-      <td>
+      <td class="text-nowrap">
         <a [routerLink]="['/administradores', administradores.id ]"class="btn btn-warning btn-sm m-1">Mostrar</a>
         <a [routerLink]="['/administradores', administradores.id, 'editar' ]" class="btn btn-primary btn-sm m-1">Editar</a>
-        <button (click)= "eliminarAdministradores(administradores.id!)" btn btn-danger btn-sm>Eliminar</button>
+        <button (click)= "eliminarAdministradores(administradores.id!)" class="btn btn-danger btn-sm">Eliminar</button>
       </td>
     </tr>
   </tbody>
