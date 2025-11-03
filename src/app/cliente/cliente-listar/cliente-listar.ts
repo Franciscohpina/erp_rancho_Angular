@@ -28,6 +28,16 @@ export class ClienteListar { // agredar "implements OnInit" si manda error
       });
   }
 
+  eliminarCliente(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este cliente?')) {
+      this.clienteServicio.eliminarCliente(id).subscribe(() => {
+        console.log('Cliente eliminado');
+        // Actualiza la lista en el frontend
+        this.clientes = this.clientes.filter(c => c.id !== id);
+      });
+    }
+  }
+
   // cliente = [
 //     {id:1, nombre:'Alexander McQueen', direccion:'Meconetzin 7405, Tj', telefono:'1234567890',correo:'armani@ranchotecate.com',rfc:'6659208576', csf:'GIA234567',estado:'Activo'}
 //   ];

@@ -4,17 +4,21 @@
 <a class="btn btn-success btn-sm" [routerLink]="['/administradores']"  href=""> regresar </a>
 </div>
 
-<div>
-    <p><strong>Id:</strong>{{id}}</p>
-    <p><strong>Nombres:</strong>{{nombres}}</p>
-    <p><strong>Apellidos:</strong>{{apellidos}}</p>
-    <p><strong>Telefono:</strong>{{telefono}}</p>
-    <p><strong>RFC:</strong>{{rfc}}</p>
-    <p><strong>NSS:</strong>{{nss}}</p>
-    <p><strong>Email:</strong>{{email}}</p>
-    <p><strong>Username:</strong>{{username}}</p>
-    <p><strong>Password:</strong>{{password}}</p>
-    <p><strong>Imagen:</strong>{{imagen}}</p>
-    <p><strong>Rol:</strong>{{rol}}</p>
+<div *ngIf="administradores"> 
+        <p><strong>Id:</strong>{{ administradores.id }}</p>
+    <p><strong>Nombres:</strong>{{ administradores.nombres }}</p>
+    <p><strong>Apellidos:</strong>{{ administradores.apellidos }}</p>
+    <p><strong>Telefono:</strong>{{ administradores.telefono }}</p>
+    <p><strong>RFC:</strong>{{ administradores.rfc }}</p>
+    <p><strong>NSS:</strong>{{ administradores.nss }}</p>
+    <p><strong>Email:</strong>{{ administradores.email }}</p>
+    <p><strong>Username:</strong>{{ administradores.username }}</p>
+    <p><strong>Imagen:</strong></p>
+    <img *ngIf="administradores.imagen" 
+        [src]="'http://localhost:3000/' + administradores.imagen" 
+        width="200" 
+        alt="Foto del administrador">
 
+    <p *ngIf="!administradores.imagen">No hay imagen registrada.</p>
+    <p><strong>Rol:</strong>{{ administradores.rol }}</p>
 </div>

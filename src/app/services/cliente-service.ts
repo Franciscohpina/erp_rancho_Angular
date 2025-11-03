@@ -11,17 +11,35 @@ export class ClienteService {
 
   constructor(private http: HttpClient){} //declarando funcion http con la que se trabajara 
 
-  obtenerClientes(): Observable<Cliente[]> //poner con el que se va a trabajar "Cliente en este caso"
-  {
-    return this.http.get<Cliente[]>(this.apiURL); //si el cliente no coincide con la interfaz de la BD aqui va a tronar
-  }
+  obtenerClientes(): Observable<any>
+  {
+    return this.http.get<any>(this.apiURL); 
+  }
 
-  guardarCliente(cliente: Cliente): Observable<Cliente> //cambiar <Cliente> por <any> si no sabemos que es lo que manda
-  {
-    return this.http.post<Cliente>(this.apiURL, cliente).pipe( //cambiar <Cliente> por <any> si no sabemos que es lo que manda
-      tap(res=>{
-        console.log('respuesta'+res);
-      })
-    );
-  }
+  // --- Método existente (Corregido a <any>) ---
+  guardarCliente(cliente: Cliente): Observable<any> 
+  {
+    return this.http.post<any>(this.apiURL, cliente).pipe(
+      tap(res=>{
+        console.log('respuesta'+res);
+      })
+    );
+  }
+
+  // ---- MÉTODO AÑADIDO: BUSCAR POR ID ----
+  buscarCliente(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiURL}/${id}`); 
+  }
+
+  // ---- MÉTODO AÑADIDO: ACTUALIZAR ----
+  actualizarCliente(id: number, data: Cliente): Observable<any> {
+    return this.http.put<any>(`${this.apiURL}/${id}`, data).pipe(
+      tap(res => console.log('Respuesta al actualizar:', res))
+    );
+  }
+
+  // ---- MÉTODO AÑADIDO: ELIMINAR ----
+  eliminarCliente(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiURL}/${id}`);
+  }
 }

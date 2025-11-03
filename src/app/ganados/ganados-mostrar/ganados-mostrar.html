@@ -1,1 +1,28 @@
-<p>ganados-mostrar works!</p>
+<h1>Detalles del Animal</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/ganados']">Regresar</a>
+</div>
+
+<div *ngIf="ganado">
+  <p><strong>ID:</strong> {{ ganado.id }}</p>
+  <p><strong>Edad (meses):</strong> {{ ganado.edad }}</p>
+  <p><strong>Sexo:</strong> {{ ganado.sexo }}</p>
+  <p><strong>Peso (kg):</strong> {{ ganado.peso }}</p>
+  <p><strong>Precio ($):</strong> {{ ganado.precio }}</p>
+  <p><strong>Origen:</strong> {{ ganado.origen }}</p>
+  <p><strong>Altura (cm):</strong> {{ ganado.altura }}</p>
+  <p><strong>Estado:</strong> {{ ganado.estado }}</p>
+  <p><strong>Raza ID:</strong> {{ ganado.raza_id }}</p>
+  <p><strong>Categoría ID:</strong> {{ ganado.categoria_id }}</p>
+  <p><strong>Corral ID:</strong> {{ ganado.corral_id }}</p>
+  <p><strong>Proveedor ID:</strong> {{ ganado.proveedor_id }}</p>
+  
+  <p><strong>Imagen:</strong></p>
+  <img *ngIf="ganado.imagen" [src]="'http://localhost:3000/' + ganado.imagen" width="200" alt="Imagen del animal">
+  <p *ngIf="!ganado.imagen">No hay imagen registrada.</p>
+</div>
+
+<div *ngIf="!ganado">
+  <p>Cargando datos...</p>
+</div>

@@ -1,0 +1,41 @@
+<h1>Editar Registro de Ordeña</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/leches']">Regresar</a>
+</div>
+
+<form (ngSubmit)="actualizarLeche()">
+  <br>
+  <div class="leche-form">
+    
+    <div class="form-floating">
+      <!-- Usamos type="date" para la fecha -->
+      <input [(ngModel)]="leche.fecha" name="fecha" type="date" class="form-control" id="fecha">
+      <label for="fecha">Fecha</label>
+    </div>
+
+    <div class="form-floating">
+      <input [(ngModel)]="leche.cantidad" name="cantidad" type="number" step="0.01" class="form-control" id="cantidad">
+      <label for="cantidad">Cantidad (Litros)</label>
+    </div>
+
+    <div class="form-floating">
+      <input [(ngModel)]="leche.densidad" name="densidad" type="number" step="0.001" class="form-control" id="densidad">
+      <label for="densidad">Densidad (ej: 1.030)</label>
+    </div>
+
+    <div class="form-floating">
+      <input [(ngModel)]="leche.tanque_id" name="tanque_id" type="number" class="form-control" id="tanque_id">
+      <label for="tanque_id">ID Tanque</label>
+    </div>
+
+    <div class="form-floating">
+      <input [(ngModel)]="leche.ganado_id" name="ganado_id" type="number" class="form-control" id="ganado_id">
+      <label for="ganado_id">ID Ganado</label>
+    </div>
+
+    <div>
+      <button type="submit">Actualizar Registro</button>
+    </div>
+  </div>    
+</form>

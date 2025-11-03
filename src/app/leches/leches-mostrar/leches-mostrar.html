@@ -1,0 +1,20 @@
+<h1>Detalles de Ordeña</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/leches']">Regresar</a>
+</div>
+
+<!-- Usamos *ngIf para esperar a que lleguen los datos -->
+<div *ngIf="leche">
+  <p><strong>ID:</strong> {{ leche.id }}</p>
+  <p><strong>Fecha:</strong> {{ leche.fecha | date:'yyyy-MM-dd' }}</p>
+  <p><strong>Cantidad (Litros):</strong> {{ leche.cantidad }}</p>
+  <p><strong>Densidad:</strong> {{ leche.densidad }}</p>
+  <p><strong>ID Tanque:</strong> {{ leche.tanque_id }}</p>
+  <p><strong>ID Ganado:</strong> {{ leche.ganado_id }}</p>
+</div>
+
+<!-- Mensaje de carga -->
+<div *ngIf="!leche">
+  <p>Cargando datos...</p>
+</div>

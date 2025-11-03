@@ -40,11 +40,13 @@
       <td>{{ganados.categoria_id}}</td>
       <td>{{ganados.corral_id}}</td>
       <td>{{ganados.proveedor_id}}</td>
-       <td>
-        <button class="btn btn-warning btn-sm m-1">Detalles</button>
-        <a [routerLink]="['/ganados',ganados.id,'editar']" class="btn btn-primary btn-sm m-1">Editar</a>
-        <button class="btn btn-danger btn-sm">Eliminar</button>
-      </td>
+       <td class="text-nowrap"> 
+        <div class="btn-group" role="group"> 
+          <a [routerLink]="['/ganados', ganados.id]" class="btn btn-warning btn-sm">Detalles</a>
+          <a [routerLink]="['/ganados',ganados.id,'editar']" class="btn btn-primary btn-sm">Editar</a>
+          <button (click)="eliminarGanado(ganados.id)" class="btn btn-danger btn-sm">Eliminar</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

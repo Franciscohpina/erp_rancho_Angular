@@ -1,1 +1,15 @@
-<p>categorias-mostrar works!</p>
+<h1>Detalles de Categoría</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/categorias']">Regresar</a>
+</div>
+
+<div *ngIf="categoria">
+  <p><strong>ID:</strong> {{ categoria.id }}</p>
+  <p><strong>Nombre:</strong> {{ categoria.nombre }}</p>
+  <p><strong>Descripción:</strong> {{ categoria.descripcion }}</p>
+</div>
+
+<div *ngIf="!categoria">
+  <p>Cargando datos...</p>
+</div>

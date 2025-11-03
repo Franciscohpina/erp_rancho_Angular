@@ -1,7 +1,10 @@
+<h1>Rastros</h1>
 
-<a [routerLink]="['/rastros/crear']" href=""> Registra un nuevo rastro</a>
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/rastros/crear']" href=""> Registra un nuevo rastro</a>
+</div>
 
-
+  <br>
   <table class="rastros-listar">
   <thead>
     <tr>
@@ -10,15 +13,23 @@
       <th scope="col">Destino</th>
       <th scope="col">Estado</th>
       <th scope="col">Ganado_id</th>
+      <th width="250px">Acciones</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let rastros of rastros">
       <th scope="row">{{ rastros.id }}</th>
-      <td>{{rastros.fecha}}</td>   
+      <td>{{ rastros.fecha | date:'yyyy-MM-dd' }}</td>  
       <td>{{rastros.destino}}</td>
       <td>{{rastros.estado}}</td>
       <td>{{rastros.ganado_id}}</td>
+      <td class="text-nowrap">
+        <div class="btn-group" role="group">
+          <a [routerLink]="['/rastros', rastros.id]" class="btn btn-warning btn-sm">Detalles</a>
+          <a [routerLink]="['/rastros', rastros.id, 'editar']" class="btn btn-primary btn-sm">Editar</a>
+          <button (click)="eliminarRastro(rastros.id)" class="btn btn-danger btn-sm">Eliminar</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -28,6 +28,15 @@ ganados: Ganados[] = [];
       });
   }
 
+  eliminarGanado(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este animal?')) {
+      this.ganadosServicio.eliminarGanado(id).subscribe(() => {
+        console.log('Ganado eliminado');
+        // Actualiza la lista en el frontend
+        this.ganados = this.ganados.filter(g => g.id !== id);
+      });
+    }
+  }
 
 // ganados = [
 //     {id:1, edad:'10 meses', sexo:'hembra', peso:'750',precio:'12000.00',origen:'indegsa', altura:'153',imagen:'vaca.jpg',estado: 'activo',raza_id: '1',categoria_id:'1',corral_id: '1',proveedor_id:'1'}

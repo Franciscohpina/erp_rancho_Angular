@@ -1,6 +1,6 @@
 export interface Leches {
     id:number;
-    fecha:String; 
+    fecha:string; 
     cantidad:number;
     densidad:number;
     tanque_id:number;

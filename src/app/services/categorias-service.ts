@@ -24,4 +24,20 @@ export class CategoriasService {
         })
       );
     }
+
+  buscarCategoria(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiURL}/${id}`); 
+  }
+
+  // ---- MÉTODO AÑADIDO: ACTUALIZAR ----
+  actualizarCategoria(id: number, data: Categorias): Observable<any> {
+    return this.http.put<any>(`${this.apiURL}/${id}`, data).pipe(
+      tap(res => console.log('Respuesta al actualizar:', res))
+    );
+  }
+
+  // ---- MÉTODO AÑADIDO: ELIMINAR ----
+  eliminarCategoria(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiURL}/${id}`);
+  }
 }

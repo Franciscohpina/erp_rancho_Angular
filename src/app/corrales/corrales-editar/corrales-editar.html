@@ -1,1 +1,31 @@
-<p>corrales-editar works!</p>
+<h1>Editar Corral</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/corrales']">Regresar</a>
+</div>
+
+<form (ngSubmit)="actualizarCorral()">
+  <br>
+  <div class="corral-form">
+    <div class="form-floating">
+      <!-- El tipo es 'number' para que coincida con la interfaz -->
+      <input [(ngModel)]="corral.capacidad" name="capacidad" type="number" class="form-control" id="capacidad">
+      <label for="capacidad">Capacidad</label>
+    </div>
+
+    <!-- Usamos un <select> para el estado -->
+    <div class="form-floating">
+      <select [(ngModel)]="corral.estado" name="estado" class="form-select" id="estado">
+        <option value="disponible">Disponible</option>
+        <option value="ocupado">Ocupado</option>
+        <option value="limpieza">En limpieza</option>
+        <option value="reparacion">En reparación</option>
+      </select>
+      <label for="estado">Estado</label>
+    </div>
+
+    <div>
+      <button type="submit">Actualizar Corral</button>
+    </div>
+  </div>    
+</form>

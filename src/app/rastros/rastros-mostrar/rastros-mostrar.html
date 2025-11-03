@@ -1,0 +1,17 @@
+<h1>Detalles de Rastro</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/rastros']">Regresar</a>
+</div>
+
+<div *ngIf="rastro">
+  <p><strong>ID:</strong> {{ rastro.id }}</p>
+  <p><strong>Fecha:</strong> {{ rastro.fecha | date:'yyyy-MM-dd' }}</p>
+  <p><strong>Destino:</strong> {{ rastro.destino }}</p>
+  <p><strong>Estado:</strong> {{ rastro.estado }}</p>
+  <p><strong>ID Ganado:</strong> {{ rastro.ganado_id }}</p>
+</div>
+
+<div *ngIf="!rastro">
+  <p>Cargando datos...</p>
+</div>

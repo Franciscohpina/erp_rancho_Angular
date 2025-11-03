@@ -1,7 +1,10 @@
+<h1>Leches</h1>
 
-<a [routerLink]="['/leches/crear']" href=""> Registrar nueva ordeña </a>
+<div>
+<a class="btn btn-success btn-sm" [routerLink]="['/leches/crear']"> Registrar nueva ordeña </a>
+</div>
 
-
+  <br>
   <table class="leches-listar">
   <thead>
     <tr>
@@ -11,16 +14,24 @@
       <th scope="col">Densidad</th>
       <th scope="col">Tanque_id</th>
       <th scope="col">Ganado_id</th>
+      <th width="250px">Acciones</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let leches of leches">
       <th scope="row">{{ leches.id }}</th>
-      <td>{{leches.fecha}}</td>   
+      <td>{{ leches.fecha | date:'yyyy-MM-dd' }}</td>   
       <td>{{leches.cantidad}}</td>
       <td>{{leches.densidad}}</td>
       <td>{{leches.tanque_id}}</td>
       <td>{{leches.ganado_id}}</td>
+      <td class="text-nowrap">
+        <div class="btn-group" role="group">
+          <a [routerLink]="['/leches', leches.id]" class="btn btn-warning btn-sm">Detalles</a>
+          <a [routerLink]="['/leches', leches.id, 'editar']" class="btn btn-primary btn-sm">Editar</a>
+          <button (click)="eliminarLeche(leches.id)" class="btn btn-danger btn-sm">Eliminar</button>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

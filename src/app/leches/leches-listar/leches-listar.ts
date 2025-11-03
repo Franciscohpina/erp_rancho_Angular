@@ -28,6 +28,16 @@ export class LechesListar {
       });
   }
 
+  eliminarLeche(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este registro de ordeña?')) {
+      this.lechesServicio.eliminarLeche(id).subscribe(() => {
+        console.log('Registro eliminado');
+        // Actualiza la lista en el frontend
+        this.leches = this.leches.filter(l => l.id !== id);
+      });
+    }
+  }
+
   // leches = [
   //   {id:1, fecha:'2024-06-01', cantidad:50, densidad:1.03, tanque_id:1, ganado_id:1}
   // ];

@@ -28,6 +28,16 @@ export class CorralesListar {
       });
   }
 
+  eliminarCorral(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este corral?')) {
+      this.corralesServicio.eliminarCorral(id).subscribe(() => {
+        console.log('Corral eliminado');
+        // Actualiza la lista en el frontend
+        this.corrales = this.corrales.filter(c => c.id !== id);
+      });
+    }
+  }
+
 // corrales = [
 //     {id:1, capacidad:'3000', estado:'activo'}
 //   ];

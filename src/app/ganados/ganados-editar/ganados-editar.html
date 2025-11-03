@@ -1,1 +1,87 @@
-<p>ganados-editar works!</p>
+<h1>Editar Animal</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/ganados']">Regresar</a>
+</div>
+
+<form (ngSubmit)="actualizarGanado()">
+  <br>
+  <div class="ganado-form">
+    
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.edad" name="edad" type="number" class="form-control" id="edad">
+      <label for="edad">Edad (meses)</label>
+    </div>
+
+    <div class="form-floating">
+      <select [(ngModel)]="ganado.sexo" name="sexo" class="form-select" id="sexo">
+        <option value="Hembra">Hembra</option>
+        <option value="Macho">Macho</option>
+      </select>
+      <label for="sexo">Sexo</label>
+    </div>
+
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.peso" name="peso" type="number" class="form-control" id="peso">
+      <label for="peso">Peso (kg)</label>
+    </div>
+
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.precio" name="precio" type="number" class="form-control" id="precio">
+      <label for="precio">Precio ($)</label>
+    </div>
+
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.origen" name="origen" type="text" class="form-control" id="origen">
+      <label for="origen">Origen</label>
+    </div>
+
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.altura" name="altura" type="number" class="form-control" id="altura">
+      <label for="altura">Altura (cm)</label>
+    </div>
+
+    <div class="form-floating">
+      <select [(ngModel)]="ganado.estado" name="estado" class="form-select" id="estado">
+        <option value="activo">Activo</option>
+        <option value="vendido">Vendido</option>
+        <option value="enfermo">Enfermo</option>
+        <option value="fallecido">Fallecido</option>
+      </select>
+      <label for="estado">Estado</label>
+    </div>
+
+    <!-- IDs (Esto debería ser un <select> en el futuro) -->
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.raza_id" name="raza_id" type="number" class="form-control" id="raza_id">
+      <label for="raza_id">ID de Raza</label>
+    </div>
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.categoria_id" name="categoria_id" type="number" class="form-control" id="categoria_id">
+      <label for="categoria_id">ID de Categoría</label>
+    </div>
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.corral_id" name="corral_id" type="number" class="form-control" id="corral_id">
+      <label for="corral_id">ID de Corral (Opcional)</label>
+    </div>
+    <div class="form-floating">
+      <input [(ngModel)]="ganado.proveedor_id" name="proveedor_id" type="number" class="form-control" id="proveedor_id">
+      <label for="proveedor_id">ID de Proveedor</label>
+    </div>
+
+    <!-- Manejo de la imagen -->
+    <div>
+      <label>Imagen</label>
+      <div *ngIf="imagenActualUrl">
+        <p>Vista previa:</p>
+        <img [src]="imagenActualUrl" width="200" alt="Vista previa">
+      </div>
+      <input (change)="onFileSelected($event)" name="imagen" type="file" class="form-control">
+      <small>Selecciona un archivo solo si deseas cambiar la imagen actual.</small>
+    </div>
+
+    <div>
+      <button type="submit">Actualizar Ganado</button>
+    </div>
+  </div>    
+</form>

@@ -1,63 +1,73 @@
 <h1>Crea un nuevo ganado</h1>
 
 <div>
-<a class="btn btn-success btn-sm" [routerLink]="['/ganados']"  href=""> regresar </a>
+<a class="btn btn-success btn-sm" [routerLink]="['/ganados']"  href=""> regresar </a>
 </div>
 <br>
 <form (ngSubmit)="crearGanados()">
-    <div class="ganado-form">
-        <div class="form-floating mb-3">
-        <input [(ngModel)]="ganados.edad" name="edad" type="number" class="form-control" id="edad">
-        <label for="edad">Edad</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input [(ngModel)]="ganados.sexo" name="sexo" type="email" class="form-control" id="Sexo">
-        <label for="sexo">Sexo</label>
-        </div>
-        <div class="form-floating">
-        <input [(ngModel)]="ganados.peso" name="peso" type="number" class="form-control" id="peso">
-        <label for="peso">Peso</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input [(ngModel)]="ganados.precio" name="precio" type="number" class="form-control" id="precio">
-        <label for="precio">Precio</label>
-        </div>
-        <div class="form-floating">
-        <input [(ngModel)]="ganados.origen" name="origen" type="text" class="form-control" id="origen">
-        <label for="origen">Origen</label>
-        </div>
-        <div class="form-floating">
-        <input [(ngModel)]="ganados.altura" name="altura" type="number" class="form-control" id="altura">
-        <label for="altura">Altura</label>
-        </div>
-        <div class="input-group mb-3">
-        <input [(ngModel)]="ganados.imagen" name="imagen" type="file" class="form-control" id="inputGroupFile02">
-        <label class="input-group-text" for="inputGroupFile02">Imagen</label>
-        </div>
-        <select [(ngModel)]="ganados.estado" name="estado" class="form-select" aria-label="select-estado">
-        <option selected>Selecciona un estado </option>
-        <option value="activo">Activo</option>
-        <option value="inactivo">Inactivo</option>
-        </select>
-        <div class="form-floating mb-3">
-        <input [(ngModel)]="ganados.raza_id" name="raza_id" type="number" class="form-control" id="raza_id">
-        <label for="raza_id">Raza</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input [(ngModel)]="ganados.categoria_id" name="categoria_id" type="number" class="form-control" id="categoria_id">
-        <label for="categoria_id">Categoria</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input [(ngModel)]="ganados.corral_id" name="corral_id" type="number" class="form-control" id="corral_id">
-        <label for="corral_id">Corral</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input [(ngModel)]="ganados.proveedor_id" name="proveedor_id" type="number" class="form-control" id="proveedor_id">
-        <label for="proveedor_id">Proveedor</label>
-        </div>
-        <div>
+    <div class="ganado-form">
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="ganados.edad" name="edad" type="number" class="form-control" id="edad" required>
+        <label for="edad">Edad (meses)</label>
+        </div>
+
+        <!-- CAMBIO: 'sexo' ahora es un <select> -->
+        <div class="form-floating mb-3">
+          <select [(ngModel)]="ganados.sexo" name="sexo" class="form-select" id="sexo" required>
+            <option value="Hembra">Hembra</option>
+            <option value="Macho">Macho</option>
+          </select>
+          <label for="sexo">Sexo</label>
+        </div>
+
+        <div class="form-floating">
+        <input [(ngModel)]="ganados.peso" name="peso" type="number" class="form-control" id="peso" required>
+        <label for="peso">Peso (kg)</label>
+        </div>
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="ganados.precio" name="precio" type="number" class="form-control" id="precio" required>
+        <label for="precio">Precio ($)</label>
+        </div>
+        <div class="form-floating">
+        <input [(ngModel)]="ganados.origen" name="origen" type="text" class="form-control" id="origen" required>
+        <label for="origen">Origen</label>
+        </div>
+        <div class="form-floating">
+        <input [(ngModel)]="ganados.altura" name="altura" type="number" class="form-control" id="altura" required>
+        <label for="altura">Altura (cm)</label>
+        </div>
+
+        <!-- CAMBIO: 'imagen' ya no usa ngModel, usa (change) -->
+        <div class="input-group mb-3">
+        <input (change)="onFileSelected($event)" name="imagen" type="file" class="form-control" id="inputGroupFile02" required>
+        <label class="input-group-text" for="inputGroupFile02">Imagen</label>
+        </div>
+
+        <select [(ngModel)]="ganados.estado" name="estado" class="form-select" aria-label="select-estado" required>
+        <option value="activo">Activo</option>
+        <option value="vendido">Vendido</option>
+        <option value="enfermo">Enfermo</option>
+        <option value="fallecido">Fallecido</option>
+        </select>
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="ganados.raza_id" name="raza_id" type="number" class="form-control" id="raza_id" required>
+        <label for="raza_id">Raza (ID)</label>
+        </div>
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="ganados.categoria_id" name="categoria_id" type="number" class="form-control" id="categoria_id" required>
+        <label for="categoria_id">Categoria (ID)</label>
+        </div>
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="ganados.corral_id" name="corral_id" type="number" class="form-control" id="corral_id">
+        <label for="corral_id">Corral (ID - Opcional)</label>
+        </div>
+        <div class="form-floating mb-3">
+        <input [(ngModel)]="ganados.proveedor_id" name="proveedor_id" type="number" class="form-control" id="proveedor_id" required>
+        <label for="proveedor_id">Proveedor (ID)</label>
+        </div>
+        <div>
            <button type="submit">Guardar Ganado</button>
            <button type="reset">Limpiar Registro</button>        
-       </div>
-    </div>
+       </div>
+    </div>
 </form>

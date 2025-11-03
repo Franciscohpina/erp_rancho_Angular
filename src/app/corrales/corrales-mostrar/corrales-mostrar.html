@@ -1,1 +1,17 @@
-<p>corrales-mostrar works!</p>
+<h1>Detalles del Corral</h1>
+
+<div>
+  <a class="btn btn-success btn-sm" [routerLink]="['/corrales']">Regresar</a>
+</div>
+
+<!-- Usamos *ngIf para esperar a que lleguen los datos -->
+<div *ngIf="corral">
+  <p><strong>ID:</strong> {{ corral.id }}</p>
+  <p><strong>Capacidad:</strong> {{ corral.capacidad }}</p>
+  <p><strong>Estado:</strong> {{ corral.estado }}</p>
+</div>
+
+<!-- Mensaje de carga -->
+<div *ngIf="!corral">
+  <p>Cargando datos...</p>
+</div>

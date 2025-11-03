@@ -28,6 +28,16 @@ export class CategoriasListar {
           this.categorias=registros.data;
         });
     }
+
+    eliminarCategoria(id: number): void {
+      if (confirm('¿Estás seguro de que deseas eliminar esta categoría?')) {
+        this.categoriasServicio.eliminarCategoria(id).subscribe(() => {
+          console.log('Categoría eliminada');
+          // Actualiza la lista sin recargar la página
+          this.categorias = this.categorias.filter(cat => cat.id !== id);
+        });
+      }
+    }
 // categorias = [
 //     {id:1, nombre:'lechero', descripcion:'ganado lactando'}
 //   ];

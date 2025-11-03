@@ -28,6 +28,16 @@ rastros: Rastros[] = [];
       });
   }
 
+  eliminarRastro(id: number): void {
+    if (confirm('¿Estás seguro de que deseas eliminar este registro de rastro?')) {
+      this.rastrosServicio.eliminarRastro(id).subscribe(() => {
+        console.log('Registro eliminado');
+        // Actualiza la lista en el frontend
+        this.rastros = this.rastros.filter(r => r.id !== id);
+      });
+    }
+  }
+
   // rastros = [
   //   {id:1, fecha:'2023-10-01', destino:'Mercado Central', estado:'completo', ganado_id: 1}
   // ];

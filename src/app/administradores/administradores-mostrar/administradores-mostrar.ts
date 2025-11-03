@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Administradores } from '../../interfaces/administradores';
@@ -6,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-administradores-mostrar',
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './administradores-mostrar.html',
   styleUrl: './administradores-mostrar.css'
 })
@@ -45,14 +46,24 @@ export class AdministradoresMostrar {
   ) {}
 
   ngOnInit(): void {
+    console.log('--- Componente MOSTRAR cargado ---');
     this.idDeRuta = this.route.snapshot.params['id'];
+
+    console.log('El ID de la ruta es:', this.idDeRuta);
+    console.log('Objeto de parámetros completo:', this.route.snapshot.params);
+
     if (this.idDeRuta) {
+      console.log('Buscando administrador con ID:', this.idDeRuta);
       this.administradoresServicio.buscarAdministradores(this.idDeRuta).subscribe({
-        next: (admin: Administradores) => {
+        next: (admin: any) => {
           console.log('Datos recibidos del backend:', admin);
-          this.administradores = admin;
+          this.administradores = admin.data;
+          console.log('Variable this.administradores ASIGNADA:', this.administradores);
         },
-        error: (err) => console.error('Error al cargar administrador:', err)
+        error: (err) => { 
+          console.error('¡¡¡¡¡¡¡¡ ERROR EN EL SUBSCRIBE DE MOSTRAR !!!!!!!!!!!');
+          console.error('Error al cargar administrador:', err); // Este es el error real
+        }
       });
     }
   }
