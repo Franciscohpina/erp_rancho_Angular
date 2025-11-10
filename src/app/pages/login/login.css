@@ -45,7 +45,7 @@ input.invalid {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #255823;
   color: white;
   border: none;
   border-radius: 4px;
@@ -56,4 +56,26 @@ button {
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.main-content {
+  flex-grow: 1; 
+  display: flex;
+}
+
+.footer {
+  /* Asegúrate de que tu footer tenga las clases de Bootstrap 
+     para un tema oscuro si así lo deseas, ej: 'bg-dark text-white' 
+  */
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #C7AF94; /* Fondo gris claro */
+  border-top: 1px solid #dee2e6;
+  color: #6c757d; /* Texto gris */
+}
+
+.footer p {
+  margin: 0;
+  color: #31351b;
 }

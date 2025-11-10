@@ -1,0 +1,100 @@
+/*
+ * 1. El layout principal
+ * Usamos Flexbox para poner el sidebar y el contenido uno al lado del otro.
+ */
+.page-layout {
+  display: flex;
+  
+  /* * Calcula la altura mínima.
+   * 100vh = 100% de la altura de la ventana.
+   * Restamos 56px (altura de tu navbar) y 62px (altura de tu footer).
+   * ¡Ajusta estos números si tu navbar o footer son más altos!
+   */
+  min-height: calc(100vh - 56px - 62px);
+}
+
+/*
+ * 2. El Menú Lateral (Sidebar)
+ * Le damos un ancho fijo y un estilo limpio.
+ */
+.sidebar-menu {
+  width: 260px; /* Ancho fijo para el menú */
+  flex-shrink: 0; /* Evita que se encoja */
+  background-color: antiquewhite; /* Color de fondo gris claro (Bootstrap) */
+  border-right: 1px solid #C7AF94; /* Borde divisor */
+  padding-top: 20px;
+}
+
+.sidebar-menu ul {
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0;
+  margin: 0;
+}
+
+/*
+ * 3. Los enlaces del menú
+ * Les damos padding y un efecto hover.
+ */
+.sidebar-menu li a {
+  display: block; /* Ocupa todo el ancho del 'li' */
+  padding: 12px 25px; /* Espaciado interno */
+  color: #343a40; /* Color de texto oscuro */
+  text-decoration: none; /* Quita el subrayado */
+  font-weight: 500;
+  border-left: 3px solid transparent; /* Borde para el estado 'active' */
+}
+
+/* Efecto al pasar el mouse */
+.sidebar-menu li a:hover {
+  background-color: #8c916C; /* Fondo gris más oscuro */
+  color: #f8f8f8; /* Color azul de Bootstrap */
+}
+
+/*
+ * 4. Estilo para el enlace ACTIVO
+ * Esto funcionará si añades 'routerLinkActive="active"' a tus enlaces.
+ */
+.sidebar-menu li a.active {
+  background-color: #8c916C; /* Fondo azul claro */
+  color: #ffffff; /* Color azul primario */
+  font-weight: 700;
+  border-left: 3px solid #0d6efd; /* Borde azul */
+}
+
+/*
+ * 5. El Contenido Principal
+ * Hacemos que ocupe todo el espacio restante.
+ */
+.page-content {
+  flex-grow: 1; /* ¡Esta es la magia! Hace que llene el espacio */
+  background-color: antiquewhite;
+  
+  /* El padding (relleno) lo maneja cada componente hijo 
+     (como 'dashboard.css' o 'administradores.css')
+     para que el fondo de color llene todo el espacio.
+  */
+}
+
+.navbar{
+    background-color: #C7AF94;
+}
+
+/*
+ * 6. El Footer
+ * Lo hacemos más consistente.
+ */
+.footer {
+  /* Asegúrate de que tu footer tenga las clases de Bootstrap 
+     para un tema oscuro si así lo deseas, ej: 'bg-dark text-white' 
+  */
+  padding: 20px 0;
+  text-align: center;
+  background-color: #C7AF94; /* Fondo gris claro */
+  border-top: 1px solid #dee2e6;
+  color: #6c757d; /* Texto gris */
+}
+
+.footer p {
+  margin: 0;
+  color: #31351b;
+}
