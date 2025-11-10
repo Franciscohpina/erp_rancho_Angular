@@ -1,0 +1,72 @@
+/* Le da un 'padding' (relleno) al contenedor,
+   similar al de tu vista de 'Administradores' */
+.dashboard-container {
+  padding: 20px 25px;
+}
+
+/* Estilo para el título principal 'Resumen del Rancho' */
+.dashboard-container h2 {
+  font-size: 2.5rem; /* Tamaño de letra grande */
+  font-weight: 700;  /* Negrita */
+  margin-bottom: 0.5rem; /* Margen inferior */
+  color: #333;
+}
+
+/* Estilo para el subtítulo 'Bienvenido...' */
+.dashboard-container p {
+  font-size: 1.1rem; /* Un poco más grande que el texto normal */
+  color: #666;
+  margin-bottom: 2rem; /* Espacio antes de las tarjetas */
+}
+
+/* --- ESTILOS DE TARJETAS (Mejorados) --- */
+
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre tarjetas */
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra más suave */
+  border: 1px solid #e0e0e0; /* Borde ligero */
+  padding: 25px;
+  min-width: 280px;
+  flex-grow: 1;
+}
+
+.card-icon {
+  font-size: 2.5em; /* Tamaño del emoji */
+  margin-right: 25px;
+  
+  /* Círculo/cuadrado para el icono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #f0f2f5; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.card-info {
+  text-align: left;
+}
+
+.card-info h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #222;
+}
+
+.card-info p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+  margin-top: 5px; /* Espacio entre el número y el texto */
+}

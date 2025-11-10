@@ -1,4 +1,9 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guards/auth-guard';
+import { LoginComponent } from './pages/login/login';
+import { MainComponent } from './layouts/main/main';
+import { DashboardComponent } from './pages/dashboard/dashboard';
+
 import { ClienteListar } from './cliente/cliente-listar/cliente-listar';
 import { ClienteCrear } from './cliente/cliente-crear/cliente-crear';
 import { ClienteEditar } from './cliente/cliente-editar/cliente-editar';
@@ -52,6 +57,17 @@ import { TanquesMostrar } from './tanques/tanques-mostrar/tanques-mostrar';
 
 export const routes: Routes = [
 
+    { path: 'login', component: LoginComponent },
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    
+{
+    path: '', // Se aplica a todas las rutas hijas
+    component: MainComponent,
+    canActivate: [authGuard], // ¡AQUÍ ESTÁ LA PROTECCIÓN!
+    children: [
+
+    { path: 'dashboard', component: DashboardComponent },
+
     {path:'cliente', component: ClienteListar},
     {path:'cliente/crear', component: ClienteCrear},
     {path:'cliente/:id/editar', component: ClienteEditar},
@@ -101,4 +117,6 @@ export const routes: Routes = [
     {path:'tanques/crear', component: TanquesCrear},
     {path:'tanques/:id/editar', component: TanquesEditar},
     {path:'tanques/:id', component: TanquesMostrar},
+]
+}
 ];
