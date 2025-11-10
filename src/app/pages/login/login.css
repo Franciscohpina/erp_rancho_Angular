@@ -1,6 +1,17 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ body{
+    display: flex; 
+    flex-direction: column; 
+}
+
 .login-container {
   max-width: 400px;
-  margin: 50px auto;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -59,23 +70,31 @@ button:disabled {
 }
 
 .main-content {
-  flex-grow: 1; 
+  flex: 1; 
   display: flex;
+  padding: 50px;
+  padding-bottom: 20px; 
+  padding-top: 140px;
+  justify-content: center;
+  align-items: center ;
+  
 }
+
 
 .footer {
-  /* Asegúrate de que tu footer tenga las clases de Bootstrap 
-     para un tema oscuro si así lo deseas, ej: 'bg-dark text-white' 
-  */
-  margin-top: auto;
-  padding: 20px 0;
+ position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #C7AF94;
+  color: white;
   text-align: center;
-  background-color: #C7AF94; /* Fondo gris claro */
+  padding: 15px 0;
   border-top: 1px solid #dee2e6;
-  color: #6c757d; /* Texto gris */
+  z-index: 100;
 }
 
-.footer p {
+/* .footer p {
   margin: 0;
-  color: #31351b;
-}
+  color: #ffffff;
+} */

@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common'; // Necesario para *ngIf
   styleUrls: ['./administradores-editar.css']
 })
 export class AdministradoresEditar implements OnInit {
-  idDeRuta!: number;
+  idDeRuta: number = 0;
   administrador: Administradores  = {
     id:0,
     nombres:'',
